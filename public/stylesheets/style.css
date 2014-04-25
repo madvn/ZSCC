@@ -1,0 +1,18 @@
+body {
+  padding: 50px;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+
+a {
+  color: #00B7FF;
+}
+
+.fbButton {
+	background-color:#4c66a4;
+	padding:10px;
+	color:white;
+	cursor:hand;
+	cursor:pointer;
+	width:200px;
+	text-align:center
+}
