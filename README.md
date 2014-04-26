@@ -5,14 +5,14 @@ The webpage displays the user's name and profile picture as returned by the Face
 The user is prompted to login if currently not logged in. 
 The user can logout.
 
-# Components
+### Components
 
-Node.js
-Express Framework
-Facebook Javascript SDK
-FbGraph - https://github.com/criso/fbgraph
-Qunit - client side Javascript unit testing framework
-async
+1. Node.js
+2. Express Framework
+3. Facebook Javascript SDK
+4. FbGraph - https://github.com/criso/fbgraph
+5. Qunit - client side Javascript unit testing framework
+6. async
 
 ### Tools
 
