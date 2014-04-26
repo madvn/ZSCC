@@ -1,16 +1,18 @@
 
 
 # ZS-CodingChallenge
+The webpage displays the user's name and profile picture as returned by the Facebook graph API.
+The user is prompted to login if currently not logged in. 
+The user can logout.
 
+# Components
 
-
-## Usage
-
-
-
-## Developing
-
-
+Node.js
+Express Framework
+Facebook Javascript SDK
+FbGraph - https://github.com/criso/fbgraph
+Qunit - client side Javascript unit testing framework
+async
 
 ### Tools
 
