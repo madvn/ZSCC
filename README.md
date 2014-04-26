@@ -4,6 +4,7 @@
 The webpage displays the user's name and profile picture as returned by the Facebook graph API.
 The user is prompted to login if currently not logged in. 
 The user can logout.
+hosted at - http://young-hollows-6561.herokuapp.com/
 
 ### Components
 
@@ -12,7 +13,6 @@ The user can logout.
 3. Facebook Javascript SDK
 4. FbGraph - https://github.com/criso/fbgraph
 5. Qunit - client side Javascript unit testing framework
-6. async
 
 ### Tools
 
