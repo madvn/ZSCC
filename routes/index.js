@@ -1,8 +1,10 @@
-
+/*
+ *  ZS - Coding challenge server side custom functions
+ */
 var name = false,picture = false, resData;
 
 exports.index = function(req, res){
-	// home page
+	// render home page
 	res.render('index', { title: 'ZIPSCENE CODING CHALLENGE' });
 };
 

@@ -1,10 +1,12 @@
 /**
  * New node file
  */
-var assert = require("assert");
+var assert = require("assert")
+	, returnString = require('./../routes/index').returnString;
 
-exports.returnString = function(test){
-    test.expect("string");
-    test.ok(true, "this assertion should pass");
-    test.done();
-};
+suite('returnString',function(){
+	test('should return string', function(){
+		assert.equal('string',returnString())
+	});
+	
+})

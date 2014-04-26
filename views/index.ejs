@@ -24,7 +24,7 @@
 			// Here we specify what we do with the response anytime this event occurs. 
 			if (response.status === 'connected') {
 			  //user is logged in
-			  sendToken(response.authResponse.accessToken);
+			  uponSuccesfulLogin(response.authResponse.accessToken);
 			} else if (response.status === 'not_authorized') {
 			  FB.login();
 			} else {
@@ -49,11 +49,11 @@
 		<p>Welcome to <%= title %></p>
 
 		<br/>
-		<span id="loginButton" type="button" onclick=fbButtonClick() class="fbButton">Login using Facebook</span>
+		<span id="loginButton" type="button" onclick=loginUser() class="fbButton">Login using Facebook</span>
 
 		<div id="results" style="display:none">
-			<h1 id='namePlaceholder'></h1><br/>
 			<img src='' id='picture'></img><br/>
+			<h1 id='namePlaceholder'></h1><br/>
 			<a href=javascript:void(0) onclick=logout()>Logout</a>
 		</div>
 	</body>

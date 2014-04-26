@@ -1,12 +1,12 @@
 /**
- * New node file
+ * ZS - coding challenge client side javascript
  */
 var xmlhttp = false;
 
 /* on click of login button */
-function fbButtonClick(){
+function loginUser(){
 	// user has clicked the login button
-	FB.login()
+	FB.login();
 }
 
 /* Create http object */
@@ -21,9 +21,15 @@ function initHttpObj(){
 	  }
 }
 
+/* user is now logged in */
+function uponSuccesfulLogin(token){
+	toggleLoginButton('none');
+	sendToken(token);
+}
+
+
 /* Post user token to server */
 function sendToken(token){
-	document.getElementById('loginButton').style.display = 'none';
 	initHttpObj();
 	xmlhttp.onreadystatechange = handleStateChange;
 	// send token to back-end
@@ -39,10 +45,7 @@ if (xmlhttp.readyState==4 && xmlhttp.status==200)
   {
 	// receive user's name and picture in JSON
 	var res = JSON.parse(xmlhttp.responseText);
-	document.getElementById('results').style.display = 'block';
-	// display name and picture
-	document.getElementById('namePlaceholder').innerHTML = res.uname;
-	document.getElementById('picture').src = res.upicture;
+	updateUserInfo('block',res.uname,res.upicture);
   }
 }
 
@@ -50,10 +53,25 @@ if (xmlhttp.readyState==4 && xmlhttp.status==200)
 function logout(){
 	// logout of FB and this site
 	FB.logout()
-	// destroy user data
-	document.getElementById('results').style.display = 'none';
-	document.getElementById('namePlaceholder').innerHTML = '';
-	document.getElementById('picture').src = '';
+	destroyUserData();
+}
+
+/* destroy user data after login */
+function destroyUserData(){
+	updateUserInfo('none','','');
 	// show button to login again
-	document.getElementById('loginButton').style.display = 'block';
+	toggleLoginButton('block');
+}
+
+/* update user info */
+function updateUserInfo(disp,uname,pic){
+	document.getElementById('results').style.display = disp;
+	// display name and picture
+	document.getElementById('namePlaceholder').innerHTML = uname;
+	document.getElementById('picture').src = pic;
+}
+
+/* show or hide log in button */
+function toggleLoginButton(disp){
+	document.getElementById('loginButton').style.display = disp;
 }
