@@ -41,12 +41,17 @@ function sendToken(token){
 /* state change handler for AJAX call */
 function handleStateChange()
 {
-if (xmlhttp.readyState==4 && xmlhttp.status==200)
-  {
+if (xmlhttp.readyState==4 && xmlhttp.status==200){
 	// receive user's name and picture in JSON
 	var res = JSON.parse(xmlhttp.responseText);
 	updateUserInfo('block',res.uname,res.upicture);
   }
+else if(xmlhttp.status==404){
+	updateUserInfo('block','ERROR OCCURED','');
+}
+else{
+	updateUserInfo('block','Processing...','');
+}
 }
 
 /* logout user */

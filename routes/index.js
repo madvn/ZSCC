@@ -45,7 +45,3 @@ exports.processToken = function(req,res){
 					}
 				);
 }
-
-exports.returnString = function(){
-	return "string"
-}

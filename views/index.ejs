@@ -3,9 +3,17 @@
 	<head>
 		<title><%= title %></title>
 		<link rel='stylesheet' href='/stylesheets/style.css' />
+		<link rel='stylesheet' href='/stylesheets/qunit-1.14.0.css' />
 		<script type="text/javascript" src='/js/client.js' ></script>
 	</head>
 	<body>
+		<!-- unit test -->
+		<div id="qunit"></div>
+  		<div id="qunit-fixture"></div>
+  		<script type="text/javascript" src='/test/qunit-1.14.0.js' ></script>
+		<script type="text/javascript" src='/test/test.js' ></script>
+		
+		<!-- FB JS SDK -->
 		<div id="fb-root"></div>
 		<script>
 		  window.fbAsyncInit = function() {
